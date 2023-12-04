@@ -7,6 +7,7 @@
 <form class="" action="/add" method="post">
     @csrf
     <label for="title">タイトル：</label><input type="text" id="title" name="title">
+    <label for="name">著者：</label><input type="text" id="name" name="name">
     <label for="publisher">出版社：</label><input type="text" id="publisher" name="publisher">
     <button>作成</button>
 </form>
