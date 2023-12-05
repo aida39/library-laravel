@@ -20,3 +20,4 @@ Route::get('/edit', [BookController::class, 'edit']);
 Route::post('/edit', [BookController::class, 'update']);
 Route::get('/delete', [BookController::class, 'delete']);
 Route::post('/delete', [BookController::class, 'remove']);
+Route::get('/search', [BookController::class, 'search']);

@@ -12,4 +12,16 @@ class Book extends Model
         'title',
         'publisher',
     ];
+    public function scopeKeywordSearch($query, $keyword)
+    {
+        if (!empty($keyword)) {
+            $query->where('title', 'like', '%' . $keyword . '%');
+        }
+    }
+    public function scopePublisherSearch($query, $publisher)
+    {
+        if (!empty($publisher)) {
+            $query->where('publisher', 'like', '%' . $publisher . '%');
+        }
+    }
 }

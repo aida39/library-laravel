@@ -2,11 +2,26 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
+<!-- <style>
+    svg.w-5.h-5 {
+        width: 30px;
+        height: 30px;
+    }
+</style> -->
 @section('content')
 <div class="">
     <a class="" href="/add">
         新規登録
     </a>
+</div>
+<div>
+    <form action="/search" method="get">
+        @csrf
+        <label for="title">タイトル：</label><input type="text" id="title" name='keyword'>
+        <label for="publisher">出版社：</label><input type="text" id="publisher" name='publisher'>
+        <!-- <input type="hidden" name='id'> -->
+        <button>検索</button>
+    </form>
 </div>
 <table>
     <th>ID</th>

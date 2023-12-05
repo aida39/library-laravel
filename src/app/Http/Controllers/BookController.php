@@ -10,6 +10,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
+        // $books = Book::paginate(10);
         return view('index', compact('books'));
     }
     public function add()
@@ -43,5 +44,11 @@ class BookController extends Controller
     {
         Book::find($request->id)->delete();
         return redirect('/');
+    }
+    public function search(Request $request)
+    {
+        $books = Book::PublisherSearch($request->publisher)->KeywordSearch($request->keyword)->get();
+
+        return view('index', compact('books'));
     }
 }
